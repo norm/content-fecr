@@ -1,0 +1,11 @@
+    Search results HTML
+        
+    *   The "top" search results item seems to be consistently duplicated
+        in the "more" results area.
+        
+    *   Fuzzy results would be nice where a search term has zero direct
+        matches. For example, search for "memornada" and get no results.
+        
+    *   More than the content of the articles are being indexed, which is
+        incorrect. For example, search for "rural" and see the site map
+        appear as the most relevant result.

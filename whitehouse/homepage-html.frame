@@ -1,0 +1,145 @@
+    Homepage HTML
+        
+    *   There is white space before the doctype --- this will trigger quirks
+        mode in (at least) Internet Explorer, and cause extra differences
+        when rendering the page.
+        
+    *   The doctype is not strict, but with a little work could be so (this
+        is probably the default doctype for the content management, rather
+        than being a deliberate choice).
+        
+    *   There is no XML <language attribute>, but there is on the «html» 
+        element --- using both is recommended.
+        
+    *   The language is declared to be «en» --- more properly, it should be 
+        «en-US».
+        
+    *   The «title» element has an «id» attribute --- this is unnecessary,
+        as it is already uniquely addressable within the «DOM».
+        
+    *   Lines 9--13: it is good to have multiple feeds to allow people to 
+        subscribe to the parts they are interested in --- however, at the time
+        of the review, most feeds were completely broken and/or had bad 
+        content.
+        
+    *   Line 17: having «admin.css» appear in the public source could indicate
+        that the administrative interface is also publicly available --- this
+        stylesheet should be restricted, if so.
+        
+    *   Lines 17--19: «media="all"» is the default and so does not need to be 
+        declared.
+        
+    *   Lines 37--47: this <smells bad> and is probably unnecessary if the JS
+        is using proper event handling.
+        
+    *   Lines 49--51: <inline styles should not be used> unless absolutely 
+        dynamic and page-specific.
+        
+    *   Line 56: «<body class="mainbody">» --- as opposed to what other type
+        of body?
+        
+    *   Line 57: the skip links are places off-left by CSS which means they
+        are read by screen readers, but not visible to keyboard users ---
+        provide a focus style that brings the links back into the visible
+        portion of the page.
+        
+    *   Lines 59--61: enclosing the entire page in a «form» element and 
+        providing "state" via a hidden input is an unfortunate side-effect of
+        .NET being too clever for its own good --- it is possible to turn this
+        off and provide proper forms so that screen readers are better able
+        to contextually use forms mode.
+        
+    *   Lines 71--74: the header is a massive image with a simulated image 
+        map --- this means:
+            
+        *   the link text is inaccurate
+            
+        *   the background CSS contains images which contain text, which 
+            means it cannot be easily resized (and is also a problem for
+            efficient localisation into other languages, such as Spanish)
+            
+        *   anyone using a browser with no JS active has a very frustrating
+            user experience (turning off CSS as well improves things, but 
+            this is much less likely than a user not having JS)
+        
+    *   Lines 75--86:
+            
+        *   .NET apparently provides proper event delegation, so writing your
+            own is not required
+            
+        *   the «title» attribute on the «table» is pointless, and should
+            be a «caption» instead
+            
+        *   each «input» should have an associated «label», rather than
+            using «title» attributes
+            
+        *   a «fieldset» with a «legend» would help convey the purpose of
+            the form when a screen reader is in forms mode
+            
+    *   Lines 89--222: image replacement is used in the main navigation ---
+        this has implications for long-term maintenance, localisation,
+        legibility and means that the text cannot be properly resized (which
+        should be more of a concern than using the right font).
+        
+    *   Line 233: a named anchor is better implemented as an ID on a nearby
+        element, unless you need to support rich text (using HTML entities) 
+        in your anchor.
+        
+    *   Line 246: the size of the image is included in a «style» attribute
+        --- this should be done with the «width» and «height» attributes.
+        
+    *   Line 247: an empty «<div>» --- unless it is needed for styling 
+        purposes, the server-side templates should be set to properly filter 
+        out empty elements.
+        
+    *   Lines 250--257: using line breaks to wrap text assumes much about the
+        width of the element and the current font size --- it is better to 
+        use a paragraph and let the browser wrap to the correct width.
+        
+    *   Line 271: «class="center"» --- class names should describe the 
+        purpose or meaning of the content, not how it will be presentated.
+        
+    *   Lines 248, 267, 281, 298 & 319: «<h1>» is used repeatedly -- this 
+        suggests that the header level has been chosen based upon its visual
+        appearance rather than to create a meaningful header structure.
+        
+    *   Line 279: the «alt» attribute of the image does not convey the content
+        of the image; it reads more like a headline.
+        
+    *   Line 288: an «<img>» which has no/empty «alt» attribute, and is inside
+        an anchor with no other text will cause a screen reader to read the
+        URL as context.
+        
+    *   Lines 318--334: unnecessary duplication of previous content.
+        
+    *   Line 339: content in the source is all in capitals -- this is better
+        achieved through «text-transform: uppercase» in CSS, as it can cause
+        screen readers to spell out words rather than read them.
+        
+    *   Line 337--347: this section is created with JS, so the HTML is 
+        meaningless when JS is not available --- HTML useful only in a JS 
+        context should be created by the JS.
+        
+    *   Line 366: this paragraph of text needs a paragraph element around it.
+        
+    *   Lines 440--455: awful IDs in use on the list items.
+        
+    *   Line 431: use a header to convey to screen reader users that this is a
+        sitemap, then apply the «sitemap» anchor as an ID to the header. 
+        Better yet, have a dedicated site map page instead.
+        
+    *   Lines 606--615: this is not a list. Also, if this is the contact 
+        information for the website it can be an «<address>» element.
+        
+    *   Lines 624--628: convert these «<div>» elements into unordered lists,
+        and replace the vertical bar character with a CSS border or background
+        image as punctuation should not be used for visual styling.
+        
+    *   Line 658: this text will be indexed by search engines and exposed via
+        search results. It is also frankly unnecessary.
+        
+        
+<language attribute | http://www.w3.org/International/articles/language-tags/>
+<smells bad         | http://en.wikipedia.org/wiki/Code_smell>
+<inline styles should not be used |
+    http://developer.yahoo.com/performance/rules.html#external>

@@ -1,0 +1,21 @@
+    Articles HTML
+    
+        We used the <civil rights> page as an example of a given "article"
+        type of page, rather than a straight blog post.
+        
+    *   Lines 262--289: a list of links to other areas of the Agenda 
+        presented as paragraphs, not an unordered list.
+        
+    *   Lines 298 and 299: good use of «<blockquote>» and «<cite>» elements
+        (quite rare), but the quote needs an inner paragraph element.
+        
+    *   Lines 302--311: the use of «<strong>» elements smells of 
+        presentational thinking (or WYSIWYG markup); those should be headers
+        instead.
+        
+    *   Line 313: the abbreviation "LGBT" is used without ever explaining
+        what it stands for (regardless of whether it is correctly marked up
+        with an «<abbr>» or not).
+        
+        
+<civil rights | http://www.whitehouse.gov/agenda/civil_rights/>

@@ -1,0 +1,64 @@
+        The new Whitehouse.gov site is a marked improvement on the old one
+        in terms of quality of code. It is very clear that this site was
+        designed for the modern web, and pays more than lip service to the
+        idea of accessibility.
+        
+        Do not let the long list of comments we have make you think that the
+        site is terrible. It is possibly the best government website we've 
+        ever seen.
+        
+        
+    Archived code
+        
+        For later reference, the version of the page we reviewed is archived.
+        
+        
+    Notes for the entire site
+        
+    *   The meta keywords appear to be identical across the site --- this is
+        actually detrimental to SEO. Ideally the keywords should be relevant 
+        to the given page, not to the site as a whole.
+        
+    *   The several alternate spellings of Barack and Obama included in the
+        keywords are unnecessary for anyone using a modern search engine, 
+        as these will provide spelling corrections anyway.
+        
+    *   The use of multiple scripts is detrimental to the site's performance
+        and should be <concatenated>, <minified> and <moved to the bottom> of 
+        the page.
+        
+    *   The use of multiple stylesheets is detrimental to the site's 
+        performance and should be <concatenated> and <minified>.
+        
+    *   The CSS provides no focus styling on links for keyboard users, which
+        makes it almost impossible to use the keyboard to navigate the site.
+        
+    *   Many class names are of the form «hdrwrpr» --- whilst this is tempting
+        to conserve bandwidth, it hurts the readability of the code (and hence
+        raises maintenance costs) and the extra download time is better offset
+        by <minifying> and <gzipping> both the content and CSS instead.
+        
+    *   There seems to be an excess of class names --- often this is a sign
+        of immature skills with CSS. Sparing use of IDs and child selectors 
+        is easier to understand and maintain than sprinkling classes on
+        elements.
+        
+    *   There is a lot of white space (blank lines, heavily indented blocks)
+        in use --- although this compresses fairly well when served as gzipped
+        content, a post-processing stage removing all unnecessary white space
+        would improve the performance of the site and the readability of the
+        source.
+        
+    *   «class="clear"» has been used several times to clear floats --- <easy
+        clearing> is recommended instead, as the need for clearing is purely 
+        an artifact of CSS layouts and so should not affect the HTML.
+        
+        
+        
+<concatenated  | http://developer.yahoo.com/performance/rules.html#num_http>
+<minified      | http://developer.yahoo.com/performance/rules.html#minify>
+<minifying     | http://developer.yahoo.com/performance/rules.html#minify>
+<gzipping      | http://developer.yahoo.com/performance/rules.html#gzip>
+<easy clearing | http://www.positioniseverything.net/easyclearing.html>
+<moved to the bottom | 
+    http://developer.yahoo.com/performance/rules.html#js_bottom>

@@ -1,0 +1,42 @@
+    "Contact Us" HTML
+        
+        Many of the comments from the Homepage HTML also apply to this page.
+        We will not cover them again.
+        
+        It is unfortunate that the page claims (emphasis ours):
+        
+    >   President Obama is committed to creating the most open *and 
+    >   accessible* administration in American history.
+        
+        This page makes several basic and obvious accessibility errors in
+        the form (which is the entire point of the page).
+        
+    *   Line 282: «CONTACT US» --- all caps in source will cause a screen 
+        reader to read this instead as "Contact U.S.". (This page is probably
+        the only place on the internet where this is not much of a problem)
+        
+    *   Line 292: "Only these fields are required." --- which fields? CSS
+        background images do nothing to convey the requirements to those 
+        without the visual clue.
+        
+    *   Lines 288--491: 
+            
+        *   this entire form _must_ be rewritten to use actual «<label>» 
+            elements, as the labels appear after the inputs in the source
+            providing no context at all to screen reader users.
+            
+        *   The form contains no «<fieldset>» or «<legend>» elements to aid
+            comprehension.
+            
+        *   The form assumes no-one outside of the US would want to contact
+            the President.
+            
+    *   Line 498: a «<blockquote>» is used to quote other documents, not to
+        indent text visually.
+        
+    *   Lines 511--513 and 517--519: use an unordered list rather than line 
+        breaks to present multiple related items.
+        
+    *   Lines 525, 527, 530 and 533: a «title» attribute is for providing 
+        extra context, so should not be used to convey information which is
+        better suited as actual content.
